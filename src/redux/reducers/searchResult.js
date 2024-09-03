@@ -8,6 +8,7 @@ const initialState = {
 const searchResult = (state = initialState, action) => {
   switch (action.type) {
     case GET_COMPANY:
+      console.log("searchResult:", action.payload);
       return {
         ...state,
         results: action.payload,

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
 import { getSearchAction } from "../redux/actions";
@@ -8,6 +8,7 @@ const MainSearch = () => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
   const jobs = useSelector((state) => state.searchResults.results);
+  console.log('jobs', jobs)
 
   //const baseEndpoint =
   // "https://strive-benchmark.herokuapp.com/api/jobs?search=";
