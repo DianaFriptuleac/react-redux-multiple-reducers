@@ -1,0 +1,19 @@
+import { GET_COMPANY } from "../actions";
+
+const initialState = {
+  //l'array della ricerca
+  results: [],
+};
+
+const seearchResult = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_COMPANY:
+      return {
+        ...state,
+        results: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+export default seearchResult;
