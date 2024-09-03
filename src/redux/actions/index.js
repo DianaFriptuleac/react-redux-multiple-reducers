@@ -6,7 +6,7 @@ export const GET_COMPANY_JOBS = "GET_COMPANY_JOBS";
 export const addToFavourites = (company) => {
   return {
     type: ADD_TO_FAVOURITES,
-    payload: company,
+    payload: company,   //payload dinamico
   };
 };
 
