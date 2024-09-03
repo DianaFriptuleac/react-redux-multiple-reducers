@@ -5,7 +5,7 @@ const initialState = {
   results: [],
 };
 
-const seearchResult = (state = initialState, action) => {
+const searchResult = (state = initialState, action) => {
   switch (action.type) {
     case GET_COMPANY:
       return {
@@ -16,4 +16,4 @@ const seearchResult = (state = initialState, action) => {
       return state;
   }
 };
-export default seearchResult;
+export default searchResult;
