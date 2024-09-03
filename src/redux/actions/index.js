@@ -16,7 +16,7 @@ export const removeFromFavourites = (company) => {
     payload: company,
   };
 };
-//funzione asincrona
+//funzione asincrona  per MainSection
 
 export const getSearchAction = (query) => {
   return async (dispatch, getState) => {
@@ -40,7 +40,7 @@ export const getSearchAction = (query) => {
     }
   };
 };
-
+//funzione asincrona per CompanySearchResults
 export const getCompanyJobs = (company) => {
     return async (dispatch) => {
       try {

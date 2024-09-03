@@ -10,11 +10,10 @@ import { removeFromFavourites } from "../redux/actions";
 import { getCompanyJobs } from "../redux/actions";
 
 const CompanySearchResults = () => {
-
   const params = useParams();
-  const dispatch = useDispatch()
-  const jobs = useSelector(state => state.companyJobs.jobs);
-  const myList = useSelector(state => state.myList.content);
+  const dispatch = useDispatch();
+  const jobs = useSelector((state) => state.companyJobs.jobs);
+  const myList = useSelector((state) => state.myList.content);
 
   useEffect(() => {
     dispatch(getCompanyJobs(params.company));
@@ -39,7 +38,7 @@ const CompanySearchResults = () => {
           <Button onClick={handleList}>
             {myList.includes(params.company) ? "Remove" : "Add"}
           </Button>
-          {jobs.map(jobData => (
+          {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} />
           ))}
         </Col>
