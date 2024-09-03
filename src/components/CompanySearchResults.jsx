@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ListIndicator from "./ListIndicator";
 import { Link } from "react-router-dom";
+import { addToFavourites } from "../redux/actions";
+import { removeFromFavourites } from "../redux/actions";
+
 const CompanySearchResults = () => {
   const [jobs, setJobs] = useState([]);
   const params = useParams();
@@ -33,9 +36,9 @@ const CompanySearchResults = () => {
 
   const handleList = ()=>{
 if(myList.includes(params.company)) {
-  dispatch({type: "REMOVE_FROM_FAVOURITES",payload:params.company})
+  dispatch(removeFromFavourites(params.company))
 }else{
-  dispatch ({type:"ADD_TO_FAVOURITES", payload:params.company})
+  dispatch (addToFavourites(params.company))
 }
   }
 

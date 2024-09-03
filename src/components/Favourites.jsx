@@ -2,10 +2,15 @@ import { Button, Container, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { BsTrash3 } from "react-icons/bs";
+import { removeFromFavourites } from "../redux/actions";
+
 
 const Favourites = () => {
+
   const myList = useSelector((state) => state.myList.content);
   const dispatch = useDispatch();
+
+
   return (
     <Container>
       <Link to="/" className="text-decoration-none text-dark ">
@@ -19,7 +24,7 @@ const Favourites = () => {
             <Button
               variant="danger"
               onClick={() =>
-                dispatch({ type: "REMOVE_FROM_FAVOURITES", payload: company })
+                dispatch(removeFromFavourites(company))
               }
             >
               <BsTrash3 />
